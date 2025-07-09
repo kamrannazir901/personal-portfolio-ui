@@ -1,0 +1,81 @@
+.portfolio {
+  /* background-color: antiquewhite; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+.portfolioCard {
+  position: relative;
+}
+.portfolioCard:hover .hoverCard {
+  transform: translateY(0);
+}
+.portfolioCard:hover .image img {
+  scale: 1.1;
+}
+
+.tags {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, max-content));
+  gap: 0.3rem;
+  padding: 0.4rem 0;
+}
+
+.tag {
+  border: 1px solid var(--title);
+  padding: 0.1rem 0.3rem;
+  font-size: clamp(0.8rem, 2vw, 0.8rem);
+  border-radius: 50px;
+  text-align: center;
+}
+
+.image {
+  position: relative;
+  background-color: antiquewhite;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.image img {
+  border-radius: 10px;
+  transition: var(--transition);
+}
+
+.hoverCard {
+  position: absolute;
+  inset: 0;
+  background-color: hsla(var(--hue), 58%, 76%, 0.2);
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  transform: translateY(100%);
+  transition: var(--transition);
+}
+
+.hoverCard a {
+  background-color: rgba(0, 0, 0, 0.807);
+  border-radius: 10px;
+  border: 1px solid;
+  transition: all 0.1 ease;
+}
+.hoverCard a:hover {
+  background-color: rgba(0, 0, 0, 0.807);
+  /* scale: 0.99; */
+}
+
+.hoverCard .linkIcon {
+  padding-inline: 0.4rem;
+  color: var(--title);
+}
+
+@media screen and (max-width: 1200px) {
+  .portfolio {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .portfolio {
+    grid-template-columns: 1fr;
+  }
+}
